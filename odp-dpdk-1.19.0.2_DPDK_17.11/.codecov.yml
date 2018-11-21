@@ -1,0 +1,31 @@
+codecov:
+  notify:
+    require_ci_to_pass: yes
+
+coverage:
+  precision: 3
+  round: down
+  range: "50...75"
+  status:
+    project:
+      default:
+        enabled: yes
+        target: 70%
+        threshold: 5%
+    patch:
+      default:
+        enabled: no
+    changes: no
+
+parsers:
+  gcov:
+    branch_detection:
+      conditional: yes
+      loop: yes
+      method: no
+      macro: no
+
+comment:
+  layout: "header, diff, files"
+  behavior: default
+  require_changes: no

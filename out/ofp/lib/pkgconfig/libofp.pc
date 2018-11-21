@@ -1,0 +1,11 @@
+prefix=/home/le/FPS/out/ofp
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: libofp
+Description: The OpenFastPath TCP/IP stack
+Version: sorin.vultureanu at enea.com
+Libs: -L${libdir} -lofp
+Libs.private:
+Cflags: -I${includedir}

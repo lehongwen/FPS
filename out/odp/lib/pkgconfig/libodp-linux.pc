@@ -1,0 +1,12 @@
+prefix=/home/le/FPS/out/odp
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: libodp-linux
+Description: The ODP packet processing engine
+Version: 1.19.0.2
+Requires.private: libconfig
+Libs: -L${libdir} -lodp-linux
+Libs.private: -L/home/le/FPS/out/dpdk/usr/local//lib -Wl,--whole-archive,-lrte_pmd_af_packet,-lrte_pmd_ark,-lrte_pmd_avp,-lrte_pmd_bnxt,-lrte_pmd_bond,-lrte_pmd_crypto_scheduler,-lrte_pmd_cxgbe,-lrte_pmd_e1000,-lrte_pmd_ena,-lrte_pmd_enic,-lrte_pmd_failsafe,-lrte_pmd_fm10k,-lrte_pmd_i40e,-lrte_pmd_ixgbe,-lrte_pmd_kni,-lrte_pmd_lio,-lrte_pmd_nfp,-lrte_pmd_null,-lrte_pmd_null_crypto,-lrte_pmd_octeontx,-lrte_pmd_octeontx_ssovf,-lrte_pmd_pcap,-lrte_pmd_qede,-lrte_pmd_ring,-lrte_pmd_sfc_efx,-lrte_pmd_skeleton_event,-lrte_pmd_softnic,-lrte_pmd_sw_event,-lrte_pmd_tap,-lrte_pmd_thunderx_nicvf,-lrte_pmd_vhost,-lrte_pmd_virtio,-lrte_pmd_vmxnet3_uio,--no-whole-archive -ldpdk -ldl -lpthread -lnuma -lm -lpcap -lcrypto -ldl  -lrt -lpthread -latomic
+Cflags: -I${includedir} -isystem /home/le/FPS/out/dpdk/usr/local//include/dpdk -msse4.2
